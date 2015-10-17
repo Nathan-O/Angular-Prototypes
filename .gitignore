@@ -1,0 +1,6 @@
+#Angular-Prototypes.gitignore
+
+#Dependencies
+
+   bower_components/
+   node_modules/
