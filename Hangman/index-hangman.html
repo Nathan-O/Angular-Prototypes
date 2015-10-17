@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Hangman</title>
+
+      <!-- Angular -->
+      <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+
+      <script src="http://jashkenas.github.io/underscore/underscore-min.js"></script>
+      <!-- Local -->
+      <script type="text/javascript" src="../app.js"></script>
+      <script type="text/javascript" src="app-hangman.js"></script>
+   </head>
+
+   <body ng-app="app">
+
+      <header>
+         <div>
+            <h1>Hangman</h1>
+         </div>
+      </header>
+
+
+      <div ng-controller="HangManCtrl">
+
+         <div>
+            <!-- HANGED MAN AND GALLOWS GO HERE -->
+         </div>
+
+
+
+
+         <form ng-submit="addWord()">
+            <input type="password" name="newWord" ng-model="newWord" placeholder="Enter A New Word"> <br>
+            <button> Add Word</button>
+         </form>
+
+         <span ng-repeat="char in displayChars() track by $index">
+         {{char}}
+         </span>
+
+         <form ng-submit="checkGuess()">
+            <input type="text" name="guess" ng-model="guess"><button>Guess</button>
+         </form>
+
+         <div ng-pluralize count="guessCount" when="{'0': 'No guesses.', 'one': '1 guess.', 'other': '{} guesses.'}">
+         {{guessCount}}
+         </div>
+
+         <div ng-repeat="character in guessedChars track by $index">
+         {{character}}
+         </div>
+      </div>
+
+
+   </body>
+</html>
