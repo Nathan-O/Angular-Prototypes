@@ -1,0 +1,34 @@
+<div class="text-center">
+   <div ng-repeat="forums in forum">
+
+      <h3> {{ forum.category }} </h3>
+
+   <div ng-repeat="conversaiton in forum.converations">
+      <div class="row">
+         <div class ="col-md-8 col-md-offset-2">
+            <ul class="list-unstyled">
+               <li>
+                  <div>
+                     <h4> {{conversation.title}} </h4>
+                     <p> Original Post by: {{conversation.created_by}}</p>
+                     <p> {{ conversation.open-statment }} </p>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+
+   <!-- <br>
+   <h3>{{wine.name}}</h3>
+
+   <hr>
+   <img ng-src="{{wine.picture}}" class="img-responsive" style="margin:0 auto">
+   <hr>
+
+   <p><strong>Year:</strong> {{wine.year}}</p>
+   <p><strong>Grapes:</strong> {{wine.grapes}}</p>
+   <p><strong>Country:</strong> {{wine.country}}</p>
+   <p><strong>Region:</strong> {{wine.region}}</p>
+   <p><strong>Price:</strong> ${{wine.price}}</p> -->
+</div>
