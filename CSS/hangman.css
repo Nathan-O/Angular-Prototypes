@@ -1,8 +1,8 @@
-#test {
-   background-color: red;
+#hangman-page {
+   background-color: cyan;
 }
 
-#gallows-wrap {
+/*#gallows-wrap {
    border: 3px black solid;
    background-color: orange;
    text-align: center;
@@ -13,4 +13,4 @@
 #gallows {
    border: 2px black solid;
    background-color: white;
-}
+}*/
