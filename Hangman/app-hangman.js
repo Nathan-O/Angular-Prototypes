@@ -15,7 +15,7 @@ app.controller("HangmanCtrl", function($scope){
 
       $scope.guessedLetters = [];
       $scope.guessCount = 0;
-      //$scope.renderLetters();
+
 
       //also call draw function here
    };
@@ -26,7 +26,7 @@ app.controller("HangmanCtrl", function($scope){
       $scope.currentWord = $scope.newWord;
       $scope.newWord = ""; // <-- clear new word field
       $scope.initialize(); // <-- start new game
-      //$scope.renderLetters();
+
    };
 
    $scope.checkGuess = function(){
