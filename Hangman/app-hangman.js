@@ -6,8 +6,13 @@ console.log("Sanity Hangman");
 /////////////////////////////////
 /////////////////////////////////
 
+
 app.controller("HangmanCtrl", function($scope){
    $scope.currentWord = "Dreadfort";
+   $scope.guessedLetters = [];
+
+   $scope.trainer = {name: 'Ash'};
+   // console.log("Controller");
 
 
    $scope.initialize = function(){
@@ -15,9 +20,9 @@ app.controller("HangmanCtrl", function($scope){
 
       $scope.guessedLetters = [];
       $scope.guessCount = 0;
+      // init scope.var for chances left number.
 
-
-      //also call draw function here
+      // also call draw function here
    };
 
    $scope.addWord = function(){
@@ -30,7 +35,17 @@ app.controller("HangmanCtrl", function($scope){
    };
 
    $scope.checkGuess = function(){
-      console.log('guessed');
+      // console.log('Guessed: "' + $scope.guess + '"  (in check-fn)');
+      console.log("Check Click");
+      $scope.checkWrong($scope.guess);
+      console.log("...and we're back in."); // <-- logs
+      console.log("With Data: " + $scope.test); // <-- logs w/ correct data returned
+
+      // for ()
+      // if (guess){
+      //    $scope.currentWord
+      // }
+
 
       if($scope.guessedLetters.indexOf($scope.guess) === -1){
          $scope.guessedLetters.push($scope.guess);
@@ -39,17 +54,40 @@ app.controller("HangmanCtrl", function($scope){
       $scope.guess = ""; // <-- clear guess
    };
 
+   $scope.checkWrong = function(data){
+      //if ($scope.)
+      console.log("Fn Fired"); // <- yep
+      // $scope.test = 4;
+      // $scope.test = data;
+
+      // Check correctness of user's guess against currentWord
+      for (var i = 0; i <= $scope.currentWord.length-1; i++) {
+         console.log($scope.currentWord[i] + " : " + data);
+         // console.log(i);
+         if ($scope.currentWord[i] === data) {
+            $scope.test = "You're Right"; // <-- returns correctly
+            return $scope.test;
+         } else {
+            $scope.test = "Nope"; // <-- returns correctly
+
+         }
+      }
+
+      return $scope.test;
+   };
+
    $scope.renderLetters = function(){
-      console.log("render");
+      //console.log("render");
 
       var letters = $scope.currentWord.split("");
       console.log(letters);
 
       _.each(letters, function(val, index){
-         console.log("in _.each. Val = " + val + ", & Index = " + index);
+         //console.log('Guessed: "' + $scope.guess + '"  (in check-fn)');
+         //console.log("Val: '" + val + "', & Index: '" + index + "' (in _.each.)");
 
          if ($scope.guessedLetters.indexOf(val) === -1){
-            letters[index] = "_";
+            letters[index] = " _ ";
          }
       });
       return letters;
@@ -102,6 +140,28 @@ function drawGallows() {
 
 
 }
+
+/////////////////////////////////
+/////////////////////////////////
+///*          Notes          *///
+/////////////////////////////////
+/////////////////////////////////
+
+app.controller("NotesCtrl", function($scope){
+   $scope.notes = function(){
+      $scope.notes = hangmanNotes;
+   };
+
+   var hangmanNotes = ["Need to check whether or not guess is right/wrong.", "If letter is correct append something (Smile face?). If wrong append X and how many chances player has left", "Chances player has to win is number of animation/draw functions/events + 2.", "Need constant check on the chances left number, & a function that will fire when chance number is 0." ];
+});
+
+
+
+
+
+
+
+
 // arcTo(x1, y1, x2, y2, radius)
 //fillRect(x, y, width, height)  -- To Draw a rectable (chng vals for nums)
 
@@ -129,39 +189,3 @@ function drawGallows() {
 //     ctx.stroke();
 //   }
 // }
-
-// HANGMAN JS
-// app.controller("HangManCtrl", function($scope) {
-//
-//    $scope.currentWord = "angular";
-//
-//    $scope.initialize = function(){
-//       $scope.guessedChars = [];
-//       $scope.guessCount = 0;
-//    };
-//
-//    $scope.addWord = function(){
-//       $scope.currentWord = $scope.newWord;
-//       $scope.newWord = "";
-//       $scope.initialize();
-//    };
-//
-//    $scope.checkGuess = function(){
-//       if($scope.guessedChars.indexOf($scope.guess) === -1){
-//          $scope.guessedChars.push($scope.guess);
-//       }
-//       $scope.guessCount++;
-//       $scope.guess = "";
-//    };
-//
-//    $scope.displayChars = function(){
-//       var chars = $scope.currentWord.split("");
-//
-//       _.each(chars, function(val, index){
-//          if( $scope.guessedChars.indexOf(val) === -1){
-//             chars[index] = "_";
-//          }
-//       });
-//       return chars;
-//    };
-// });

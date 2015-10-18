@@ -52,15 +52,30 @@
 
          <hr>
 
+
+
+
+
+
          <div ng-controller="HangmanCtrl">
 
             <div>
                <!-- HANGED MAN AND GALLOWS GO HERE -->
             </div>
 
+            <!-- I WAANT TO KEEP TRYING THIS FOR A HINT BUTTTON TO POP UP -->
+            <!-- <div ng-if="count.guessCount >= 4"> -->
+            <!-- <div ng-show="{{guessCount}} === 4"> -->
+            <div>
+               <div>
+                  <p>Fuckin' A !</p>
+               </div>
+            </div>
+
+
             <form ng-submit="addWord()">
                <input type="password" name="newWord" ng-model="newWord" placeholder="Enter A New Word"> <br>
-               <button>Add Word</button>
+               <button ng-click="checkWrong()">Add Word</button>
             </form>
 
             <div>
@@ -83,13 +98,32 @@
 
          <hr>
 
-         <div>
-            <p>Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.
-            <br>
-            Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.
-            <br>
-            Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.</p>
+
+
+
+
+
+
+
+         <div ng-controller="NotesCtrl">
+
+            <div ng-repaet="note in notes() track by $index">
+               <ul>
+                  <li> {{ note }} </li>
+               </ul>
+            </div>
+
+            <hr>
+
+            <div>
+               <p>Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.
+               <br>
+               Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.
+               <br>
+               Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.</p>
+            </div>
          </div>
+
 
 
 
