@@ -21,6 +21,8 @@ app.controller("HangmanCtrl", function($scope){
       $scope.guessedLetters = [];
       $scope.guessCount = 0;
       // init scope.var for chances left number.
+      $scope.lost = false;
+      $scope.chances = 2;
 
       // also call draw function here
    };
@@ -82,18 +84,22 @@ app.controller("HangmanCtrl", function($scope){
    };
 
    $scope.lose = function(){
+      $scope.lost = true;
       console.log("You Lost!"); // <-- WORKS!
+      alert("You Lost");
+      $scope.initialize();
+      // render popup that forces game to restart
    };
 
    $scope.renderLetters = function(){
-      //console.log("render");
+      // console.log("render");
 
       var letters = $scope.currentWord.split("");
       console.log(letters);
 
       _.each(letters, function(val, index){
-         //console.log('Guessed: "' + $scope.guess + '"  (in check-fn)');
-         //console.log("Val: '" + val + "', & Index: '" + index + "' (in _.each.)");
+         // console.log('Guessed: "' + $scope.guess + '"  (in check-fn)');
+         // console.log("Val: '" + val + "', & Index: '" + index + "' (in _.each.)");
 
          if ($scope.guessedLetters.indexOf(val) === -1){
             letters[index] = " _ ";
