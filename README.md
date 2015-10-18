@@ -7,3 +7,11 @@ Very informative stuff will live here. yes, yes indeed.
 ## Hangman
 
 Styling works
+
+## Solar System
+
+Stuff
+
+## Discussion Forum
+
+Stuff 
