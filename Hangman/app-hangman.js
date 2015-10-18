@@ -82,7 +82,7 @@ app.controller("HangmanCtrl", function($scope){
    };
 
    $scope.lose = function(){
-      console.log("You Lost!");
+      console.log("You Lost!"); // <-- WORKS!
    };
 
    $scope.renderLetters = function(){
