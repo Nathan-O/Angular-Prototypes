@@ -1,9 +1,13 @@
 <div class="text-center">
-   <div ng-repeat="forums in forum">
 
-      <h3> {{ forum.category }} </h3>
+   <h3> {{ forumCat.category }} </h3>
 
-   <div ng-repeat="conversaiton in forum.converations">
+   <p>Huh?</p>
+   <!-- <div ng-repeat="forum in forum"> -->
+
+
+
+   <div ng-repeat="conversation in forumCat.converations">
       <div class="row">
          <div class ="col-md-8 col-md-offset-2">
             <ul class="list-unstyled">
@@ -11,8 +15,9 @@
                   <div>
                      <h4> {{conversation.title}} </h4>
                      <p> Original Post by: {{conversation.created_by}}</p>
-                     <p> {{ conversation.open-statment }} </p>
+                     <p> {{ conversation.OP }} </p>
                   </div>
+                  <hr>
                </li>
             </ul>
          </div>

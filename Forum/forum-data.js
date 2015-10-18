@@ -9,7 +9,7 @@ FORUM_DATA = [
          "id": 1,
          "title": "?",
          "created_by": "",
-         "open-statment": "",
+         "OP": "",
          "responses": [
          {
             "responder": "",
@@ -22,7 +22,7 @@ FORUM_DATA = [
          "id": 2,
          "title": "Cancer",
          "created_by": "",
-         "open-statment": "",
+         "OP": "",
          "responses": [
          {
             "responder": "",
@@ -35,7 +35,7 @@ FORUM_DATA = [
          "id": 3,
          "title": "",
          "created_by": "",
-         "open-statment": "",
+         "OP": "",
          "responses": [
          {
             "responder": "",
@@ -54,7 +54,7 @@ FORUM_DATA = [
          "id": 1,
          "title": "Neat",
          "created_by": "Helena Bonham Carter",
-         "open-statment": "This is pretty cool, hope he eventually finishes the reast of the Solar Syatem. What does everyone else think?",
+         "OP": "This is pretty cool, hope he eventually finishes the reast of the Solar Syatem. What does everyone else think?",
          "responses": [
          {
             "responder": "Havey Dent",
@@ -91,7 +91,7 @@ FORUM_DATA = [
          "id": 2,
          "title": "",
          "created_by": "",
-         "open-statment": "",
+         "OP": "",
          "responses": [
          {
             "responder": "",
@@ -104,7 +104,7 @@ FORUM_DATA = [
          "id": 3,
          "title": "",
          "created_by": "",
-         "open-statment": "",
+         "OP": "",
          "responses": [
          {
             "responder": "",
@@ -117,7 +117,7 @@ FORUM_DATA = [
          "id": 4,
          "title": "",
          "created_by": "",
-         "open-statment": "",
+         "OP": "",
          "responses": [
          {
             "responder": "",
@@ -139,7 +139,7 @@ FORUM_DATA = [
 //    {
 //       "title": "",
 //       "created_by": "",
-//       "open-statment": "",
+//       "OP": "",
 //       "responses": [
 //       {
 //          "responder": "",

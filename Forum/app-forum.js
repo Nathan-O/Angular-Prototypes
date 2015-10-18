@@ -15,7 +15,7 @@ forumApp.config(function($routeProvider, $locationProvider){
    })
       .when('/forums/:id', {
       // template: '{{wine.name}}',
-      templateUrl: 'Forum/templates/forum-show.html',
+      templateUrl: '/Forum/templates/forum-show.html',
       controller: 'ForumShowCtrl'
    })
       .otherwise({
@@ -40,7 +40,7 @@ forumApp.controller('ForumIndexCtrl',function($scope, DiscussionData){
 
 forumApp.controller('ForumShowCtrl',function($scope, DiscussionData, $routeParams){
    console.log("Forum Show");
-   $scope.forum = DiscussionData.get($routeParams.id);
+   $scope.forumCat = DiscussionData.get($routeParams.id);
 });
 
 ////////////
