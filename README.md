@@ -5,3 +5,5 @@ This will be the Angular App Prototypes README page.
 Very informative stuff will live here. yes, yes indeed.
 
 ## Hangman
+
+Styling works

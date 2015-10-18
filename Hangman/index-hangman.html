@@ -18,6 +18,10 @@
       <link rel="stylesheet" href="../CSS/hangman.css">
    </head>
 
+
+
+
+
    <body ng-app="app">
       <div class="container">
 
@@ -28,38 +32,67 @@
          </header>
 
 
-         <div ng-controller="HangManCtrl">
+         <!-- TEST CANVAS -->
+         <div class="row">
+
+            <div class="col-md-6 col-md-offset-3" id="gallows-wrap">
+               <canvas id="gallows" width="400" height="400">
+                  <!-- WHERE THE HANGED MAN DIES -->
+               </canvas>
+            </div>
+
+         </div>
+
+         <hr>
+
+         <div id="test">
+            <p>This (CSS) works as far as I can tell</p>
+            <p>I think it is. Now why doesn't the game work?</p>
+         </div>
+
+         <hr>
+
+         <div ng-controller="HangmanCtrl">
 
             <div>
                <!-- HANGED MAN AND GALLOWS GO HERE -->
             </div>
 
-            <div id="test">
-               <p>This (CSS) works as far as I can tell</p>
-            </div>
-
-
             <form ng-submit="addWord()">
                <input type="password" name="newWord" ng-model="newWord" placeholder="Enter A New Word"> <br>
-               <button> Add Word</button>
+               <button>Add Word</button>
             </form>
 
-            <span ng-repeat="char in displayChars() track by $index">
-            {{char}}
-            </span>
+            <div>
+               <p> This <span ng-repeat="letter in renderLetters() track by $index">{{letter}}</span> </p>
+            </div>
 
             <form ng-submit="checkGuess()">
                <input type="text" name="guess" ng-model="guess"><button>Guess</button>
             </form>
 
             <div ng-pluralize count="guessCount" when="{'0': 'No guesses.', 'one': '1 guess.', 'other': '{} guesses.'}">
-            {{guessCount}}
+               {{guessCount}}
             </div>
 
-            <div ng-repeat="character in guessedChars track by $index">
-            {{character}}
+            <div ng-repeat="char in guessedLetters track by $index">
+               {{char}}
             </div>
+
          </div>
+
+         <hr>
+
+         <div>
+            <p>Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.
+            <br>
+            Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.
+            <br>
+            Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words. Placeholder text, words words words words words words words words words words.</p>
+         </div>
+
+
+
 
       </div>
    </body>

@@ -1,3 +1,16 @@
 #test {
    background-color: red;
 }
+
+#gallows-wrap {
+   border: 3px black solid;
+   background-color: orange;
+   text-align: center;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+#gallows {
+   border: 2px black solid;
+   background-color: white;
+}
