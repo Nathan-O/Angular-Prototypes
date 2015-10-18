@@ -10,7 +10,7 @@ console.log("Sanity Hangman");
 app.controller("HangmanCtrl", function($scope){
    $scope.currentWord = "Dreadfort";
    $scope.guessedLetters = [];
-
+   $scope.chances = 2;
    $scope.trainer = {name: 'Ash'};
    // console.log("Controller");
 
@@ -52,11 +52,15 @@ app.controller("HangmanCtrl", function($scope){
       }
       $scope.guessCount += 1; // <-- update guess count
       $scope.guess = ""; // <-- clear guess
+
+      if ($scope.chances === 0) {
+         $scope.lose();
+      }
    };
 
    $scope.checkWrong = function(data){
-      //if ($scope.)
-      console.log("Fn Fired"); // <- yep
+      // if ($scope.)
+      // console.log("Fn Fired"); // <- yep
       // $scope.test = 4;
       // $scope.test = data;
 
@@ -72,8 +76,13 @@ app.controller("HangmanCtrl", function($scope){
 
          }
       }
-
+      $scope.chances -= 1;
+      console.log($scope.chances);
       return $scope.test;
+   };
+
+   $scope.lose = function(){
+      console.log("You Lost!");
    };
 
    $scope.renderLetters = function(){
