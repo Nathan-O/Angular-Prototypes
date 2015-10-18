@@ -9,21 +9,29 @@ console.log("Sanity Hangman");
 app.controller("HangmanCtrl", function($scope){
    $scope.currentWord = "Dreadfort";
 
+
    $scope.initialize = function(){
+      console.log("init");
+
       $scope.guessedLetters = [];
       $scope.guessCount = 0;
       //$scope.renderLetters();
-      
+
       //also call draw function here
    };
 
    $scope.addWord = function(){
+      console.log("added");
+
       $scope.currentWord = $scope.newWord;
       $scope.newWord = ""; // <-- clear new word field
       $scope.initialize(); // <-- start new game
+      //$scope.renderLetters();
    };
 
    $scope.checkGuess = function(){
+      console.log('guessed');
+
       if($scope.guessedLetters.indexOf($scope.guess) === -1){
          $scope.guessedLetters.push($scope.guess);
       }
@@ -32,10 +40,15 @@ app.controller("HangmanCtrl", function($scope){
    };
 
    $scope.renderLetters = function(){
+      console.log("render");
+
       var letters = $scope.currentWord.split("");
+      console.log(letters);
 
       _.each(letters, function(val, index){
-         if ($scope.gussedLetters.indexOf(val) === -1){
+         console.log("in _.each. Val = " + val + ", & Index = " + index);
+
+         if ($scope.guessedLetters.indexOf(val) === -1){
             letters[index] = "_";
          }
       });
