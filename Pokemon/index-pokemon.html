@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app='pokemonApp'>
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon Battle!</title>
+
+  <!-- ANGULAR -->
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <!-- BOOTSTRAP -->
+ <link rel="stylesheet" href="../bower_components\bootstrap\dist\css\bootstrap.min.css">
+
+  <!-- LOCAL -->
+  <!-- JS -->
+  <script type="text/javascript" src="../app.js"></script>
+  <script type="text/javascript" src="pokemon_data.js"></script>
+  <script type="text/javascript" src="app-pokemon.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../CSS/pokemon.css">
+</head>
+
+
+<body ng-controller="PokemonCtrl">
+
+   <div class="container" id="poke-page">
+
+      <header>
+         <div class="page-header">
+            <h1>Pokemon Battle</h1>
+         </div>
+      </header>
+
+      <div class="jumbotron col-md-6 col-md-offset-3" id="battle-wrap">
+
+         <h3 ng-hide="battle.length"><strong>Choose Your Fighters!</strong></h3>
+
+
+
+         <h3 ng-show="previousWinner"> {{previousWinner}} Wins! </h3>
+
+
+
+         <div class="col-md-6 col-md-offset-3" id="battle-arena">
+            <div class="fighter">
+               <img ng-show="battle[0]" ng-src="{{battle[0].image.href}}">
+            </div>
+            <span ng-show="battle[1]" class="vs"> vs. </span>
+            <div class="fighter">
+               <img ng-show="battle[1]" ng-src="{{battle[1].image.href}}">
+            </div>
+         </div>
+
+
+
+         <div>
+            <button class="btn btn-lg btn-primary" ng-show="battle[1]" ng-click="pickWinner()">Fight!</button>
+         </div>
+
+      </div>
+
+      <hr>
+
+
+      <div ng-repeat="pokemon in pokemons">
+
+               <a ng-href="#PREPARE-FOR-BATTLE-{{pokemon.name.text | uppercase}}!!!" ng-click="iChooseYou(pokemon)"><button class="btn btn-xs btn-default"> {{pokemon.name.text}}</button></a>
+
+      </div>
+
+
+
+
+
+
+
+
+   </div>
+
+
+</body>
+</html>

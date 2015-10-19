@@ -1,0 +1,40 @@
+body  {
+  /*text-align: center;*/
+}
+
+#battle-wrap {
+   height: 600px;
+}
+
+#poke-page {
+   background-color: pink;
+}
+
+.vs {
+  line-height: 40px;
+  vertical-align: top;
+}
+
+.fighter {
+   height: 60px;
+   width: 60px;
+   border: 3px black solid;
+}
+
+img {
+  height: 40px;
+}
+
+a {
+  padding: 1px 5px;
+  text-decoration: none;
+}
+
+a:hover {
+  border: 1px solid black;
+  padding: 0px 4px;
+}
+
+button {
+  width: 25%;
+}
