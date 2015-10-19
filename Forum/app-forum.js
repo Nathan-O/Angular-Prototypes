@@ -33,17 +33,19 @@ forumApp.config(function($routeProvider, $locationProvider){
 // CONTROLLERS //
 /////////////////
 
-forumApp.controller('ForumIndexCtrl',function($scope, DiscussionData){
+forumApp.controller('ForumIndexCtrl', function($scope, DiscussionData){
    console.log("Forum Index");
    $scope.forums = DiscussionData.query();
 });
 
-forumApp.controller('ForumShowCtrl',function($scope, DiscussionData, $routeParams){
+forumApp.controller('ForumShowCtrl', function($scope, DiscussionData, $routeParams){
    console.log("Forum Show");
    $scope.forumCat = DiscussionData.get($routeParams.id);
+
 });
 
-////////////
+
+/////////////
 // MODELS //
 ////////////
 
@@ -57,16 +59,13 @@ forumApp.factory('DiscussionData', function(){
 
    DiscussionData.get = function(id){
       var dataId = parseInt(id);
-      return FORUM_DATA.find(function(wine){
-         return wine.id == dataId;
+      return FORUM_DATA.find(function(data){
+         return data.id == dataId;
       });
    };
 
   return DiscussionData;
-
 });
-
-
 
 
 

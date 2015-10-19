@@ -3,6 +3,28 @@
    <h3> {{ forumCat.category }} </h3>
 
    <p>Huh?</p>
+
+   <!-- toggle create discussion form -->
+   <button class="center btn btn-xs" ng-init="discussFormVisible=false" ng-click="discussFormVisible=!discussFormVisible">Add Topic</button>
+   <hr>
+   <!-- create wine -->
+   <div class="col-md-6 col-md-offset-3" ng-show="discussFormVisible">
+
+      <form ng-submit="createTopic()">
+        <div class="form-group">
+          <input type="text" ng-model="discussion.title" class="form-control" placeholder="Topic Title" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" ng-model="discussion.created_by" class="form-control" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <input type="text" ng-model="discussion.OP" class="form-control" placeholder="Topic Description">
+        </div>
+
+        <input type="submit" value="Add" class="btn btn-default form-control">
+      </form>
+   </div>
+   <hr>
    <!-- <div ng-repeat="forum in forum"> -->
 
 
@@ -14,8 +36,28 @@
                <li>
                   <div>
                      <h4> {{conversation.title}} </h4>
+                     <h3><small><a ng-href="/forums/{{forumCat.id}}/conversation/{{conversation.id}}">Join Discussion</a></small></h3>
                      <p> Original Post by: {{conversation.created_by}}</p>
                      <p> {{ conversation.OP }} </p>
+
+                     <button class="center btn btn-xs" ng-init="commentDivVisible=false" ng-click="commentDivVisible=!commentDivVisible">See Responses</button>
+
+                     <div class="col-md-6 col-md-offset-3" ng-show="commentDivVisible">
+                        <!-- comments -->
+                        <div ng-repeat="response in conversation.responses">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <div>
+                                    <h5> {{response.responder}} </h5>
+                                    <h5><small>To: {{ response.respond_to }} </small></h5>
+                                    <p> {{ response.comment }} </p>
+                                 </div>
+                              </li>
+                           </ul>
+                           <hr>
+                        </div>
+
+                     </div>
                   </div>
                   <hr>
                </li>
@@ -23,6 +65,97 @@
          </div>
       </div>
    </div>
+
+
+
+
+<!-- <button class="center btn btn-xs" ng-init="commentDivVisible=false" ng-click="commentDivVisible=!commentDivVisible">See Responses</button>
+
+<div class="col-md-6 col-md-offset-3" ng-show="commentDivVisible">
+   <!- comments ->
+   <div ng-repeat="response in conversation.responses">
+      <ul class="list-unstyled">
+         <li>
+            <div>
+               <h5> {{response.responder}} </h5>
+               <h5><small> {{ response.respond_to }} </small></h5>
+               <p> {{ response.comment }} </p>
+         </li>
+      </ul>
+   </div>
+
+</div> -->
+
+
+
+
+
+   <!-- toggle create comment form -->
+   <button class="center btn btn-xs" ng-init="commentFormVisible=false" ng-click="commentFormVisible=!commentFormVisible">Add Comment</button>
+   <hr>
+   <!-- create comment -->
+   <div class="col-md-6 col-md-offset-3" ng-show="commentFormVisible">
+
+      <form ng-submit="createResponse()">
+        <div class="form-group">
+          <input type="text" ng-model="response.responder" class="form-control" placeholder="Your Name" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" ng-model="response.respond_to" class="form-control" placeholder="Respond to (optional)">
+        </div>
+        <div class="form-group">
+          <input type="text" ng-model="response.comment" class="form-control" placeholder="Comment">
+        </div>
+
+        <input type="submit" value="Post" class="btn btn-default form-control">
+      </form>
+   </div>
+   <hr>
+
+
+
+
+
+
+
+<!--
+
+// {
+//    "id": 1,
+//    "catagoery": "",
+//    "converations": [
+//    {
+//       "title": "",
+//       "created_by": "",
+//       "OP": "",
+//       "responses": [
+//       {
+//          "responder": "",
+//          "created_at": "",
+//          "respond_to": "",
+//          "comment": ""
+//       }
+//    ]}
+// ]},
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    <!-- <br>
    <h3>{{wine.name}}</h3>

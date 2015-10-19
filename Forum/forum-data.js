@@ -84,7 +84,7 @@ FORUM_DATA = [
             "responder": "Jamie Lannister",
             "created_at": "",
             "respond_to": "Nicolas Cage",
-            "comment": "Careful about what words you use to describe yourself sir."
+            "comment": "Careful about which words you use to describe yourself sir."
          }
       ]},
       {
