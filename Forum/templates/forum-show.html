@@ -1,32 +1,10 @@
 <div class="text-center">
 
-   <h3> {{ forumCat.category }} </h3>
-
-   <p>Huh?</p>
-
-   <!-- toggle create discussion form -->
-   <button class="center btn btn-xs" ng-init="discussFormVisible=false" ng-click="discussFormVisible=!discussFormVisible">Add Topic</button>
-   <hr>
-   <!-- create wine -->
-   <div class="col-md-6 col-md-offset-3" ng-show="discussFormVisible">
-
-      <form ng-submit="createTopic()">
-        <div class="form-group">
-          <input type="text" ng-model="discussion.title" class="form-control" placeholder="Topic Title" autofocus>
-        </div>
-        <div class="form-group">
-          <input type="text" ng-model="discussion.created_by" class="form-control" placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <input type="text" ng-model="discussion.OP" class="form-control" placeholder="Topic Description">
-        </div>
-
-        <input type="submit" value="Add" class="btn btn-default form-control">
-      </form>
-   </div>
-   <hr>
-   <!-- <div ng-repeat="forum in forum"> -->
-
+   <header>
+      <div class="page-header">
+         <h3> {{ forumCat.category }} </h3>
+      </div>
+   </header>
 
 
    <div ng-repeat="conversation in forumCat.converations">
@@ -67,106 +45,4 @@
    </div>
 
 
-
-
-<!-- <button class="center btn btn-xs" ng-init="commentDivVisible=false" ng-click="commentDivVisible=!commentDivVisible">See Responses</button>
-
-<div class="col-md-6 col-md-offset-3" ng-show="commentDivVisible">
-   <!- comments ->
-   <div ng-repeat="response in conversation.responses">
-      <ul class="list-unstyled">
-         <li>
-            <div>
-               <h5> {{response.responder}} </h5>
-               <h5><small> {{ response.respond_to }} </small></h5>
-               <p> {{ response.comment }} </p>
-         </li>
-      </ul>
-   </div>
-
-</div> -->
-
-
-
-
-
-   <!-- toggle create comment form -->
-   <button class="center btn btn-xs" ng-init="commentFormVisible=false" ng-click="commentFormVisible=!commentFormVisible">Add Comment</button>
-   <hr>
-   <!-- create comment -->
-   <div class="col-md-6 col-md-offset-3" ng-show="commentFormVisible">
-
-      <form ng-submit="createResponse()">
-        <div class="form-group">
-          <input type="text" ng-model="response.responder" class="form-control" placeholder="Your Name" autofocus>
-        </div>
-        <div class="form-group">
-          <input type="text" ng-model="response.respond_to" class="form-control" placeholder="Respond to (optional)">
-        </div>
-        <div class="form-group">
-          <input type="text" ng-model="response.comment" class="form-control" placeholder="Comment">
-        </div>
-
-        <input type="submit" value="Post" class="btn btn-default form-control">
-      </form>
-   </div>
-   <hr>
-
-
-
-
-
-
-
-<!--
-
-// {
-//    "id": 1,
-//    "catagoery": "",
-//    "converations": [
-//    {
-//       "title": "",
-//       "created_by": "",
-//       "OP": "",
-//       "responses": [
-//       {
-//          "responder": "",
-//          "created_at": "",
-//          "respond_to": "",
-//          "comment": ""
-//       }
-//    ]}
-// ]},
-
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- <br>
-   <h3>{{wine.name}}</h3>
-
-   <hr>
-   <img ng-src="{{wine.picture}}" class="img-responsive" style="margin:0 auto">
-   <hr>
-
-   <p><strong>Year:</strong> {{wine.year}}</p>
-   <p><strong>Grapes:</strong> {{wine.grapes}}</p>
-   <p><strong>Country:</strong> {{wine.country}}</p>
-   <p><strong>Region:</strong> {{wine.region}}</p>
-   <p><strong>Price:</strong> ${{wine.price}}</p> -->
 </div>
