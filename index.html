@@ -6,6 +6,9 @@
 
       <!-- Angular -->
       <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+      <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+
+      <!-- Bootstrap -->
       <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
 
       <!-- Local -->
@@ -14,17 +17,26 @@
    </head>
 
    <body ng-app="app">
+      <div class="container">
 
-      <header>
-         <div>
-            <h1>Angular App Prototypes</h1>
-            <h3>Done Rapid Fire</h3>
-         </div>
-      </header>
+         <header>
+            <div>
+               <h1>Angular App Prototypes</h1>
+               <h3>Done Rapid Fire</h3>
+            </div>
+         </header>
 
-      <h1>This is where buttons will go</h1>
+         <h1>This is where buttons will go</h1>
 
-      <a href="/Hangman/index-hangman.html"><button id="hangman">Hangman</button></a>
+         <a href="/Hangman/index-hangman.html"><button class="btn btn-default" id="hangman-btn">Hangman</button></a>
 
+         <a href="/Pokemon/index-pokemon.html"><button class="btn btn-default" id="hangman-btn">Pokemon Battle</button></a>
+
+         <a href="/Solar System/index-solar-system.html"><button class="btn btn-default" id="sol-sys-btn">Solar System</button></a>
+
+         <a href="/Forum/index-forum.html"><button class="btn btn-default" id="forum-btn">Discussion Forum</button></a>
+
+
+      </div>
    </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="forumApp">
+   <head>
+      <meta charset="utf-8">
+      <title>Discussion Forum</title>
+
+
+      <!-- Angular -->
+      <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+      <script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+
+      <script src="http://jashkenas.github.io/underscore/underscore-min.js"></script>
+      <link rel="stylesheet" href="../bower_components\bootstrap\dist\css\bootstrap.min.css">
+
+      <!-- Local -->
+      <!-- JS -->
+      <!-- <script type="text/javascript" src="../app.js"></script> -->
+      <script type="text/javascript" src="app-forum.js"></script>
+      <script type="text/javascript" src="forum-data.js"></script>
+      <!-- CSS -->
+      <link rel="stylesheet" href="../CSS/forum.css">
+
+      <!-- <base href="/forums/"> -->
+   </head>
+
+
+   <body>
+      <div class="container" id="forum-page">
+
+         <header>
+            <div class="page-header">
+               <h1>Discussion Forum</h1>
+            </div>
+         </header>
+
+         <div class="col-md-6 col-md-offset-3" ng-view>
+            <!-- CONVO DATA HERE -->
+         </div>
+
+      </div>
+   </body>
+</html>

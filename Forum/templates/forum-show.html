@@ -1,0 +1,48 @@
+<div class="text-center">
+
+   <header>
+      <div class="page-header">
+         <h3> {{ forumCat.category }} </h3>
+      </div>
+   </header>
+
+
+   <div ng-repeat="conversation in forumCat.converations">
+      <div class="row">
+         <div class ="col-md-8 col-md-offset-2">
+            <ul class="list-unstyled">
+               <li>
+                  <div>
+                     <h4> {{conversation.title}} </h4>
+                     <h3><small><a ng-href="/forums/{{forumCat.id}}/conversation/{{conversation.id}}">Join Discussion</a></small></h3>
+                     <p> Original Post by: {{conversation.created_by}}</p>
+                     <p> {{ conversation.OP }} </p>
+
+                     <button class="center btn btn-xs" ng-init="commentDivVisible=false" ng-click="commentDivVisible=!commentDivVisible">See Responses</button>
+
+                     <div class="col-md-6 col-md-offset-3" ng-show="commentDivVisible">
+                        <!-- comments -->
+                        <div ng-repeat="response in conversation.responses">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <div>
+                                    <h5> {{response.responder}} </h5>
+                                    <h5><small>To: {{ response.respond_to }} </small></h5>
+                                    <p> {{ response.comment }} </p>
+                                 </div>
+                              </li>
+                           </ul>
+                           <hr>
+                        </div>
+
+                     </div>
+                  </div>
+                  <hr>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+
+
+</div>

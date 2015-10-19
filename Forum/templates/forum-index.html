@@ -1,0 +1,21 @@
+<div ng-repeat="forum in forums">
+
+   <div class="row">
+
+      <div>
+         <h3> {{forum.category}} </h3>
+         <h3><small> <a ng-href="/forums/{{forum.id}}">Join Discussion</a> </small></h3>
+         <div ng-repeat="conversation in forum.converations">
+            <ul class="list-unstyled">
+               <li>
+                  <div>
+                     <h4> {{conversation.title}} </h4>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+
+
+   </div>
+</div>

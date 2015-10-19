@@ -1,5 +1,7 @@
 #Angular-Prototypes.gitignore
 
+Notes.md
+
 #Dependencies
 
    bower_components/
