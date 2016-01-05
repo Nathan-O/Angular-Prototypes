@@ -14,7 +14,6 @@ forumApp.config(function($routeProvider, $locationProvider){
       controller: 'ForumIndexCtrl'
    })
       .when('/forums/:id', {
-      // template: '{{wine.name}}',
       templateUrl: '/Forum/templates/forum-show.html',
       controller: 'ForumShowCtrl'
    })
